@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <script src="js/script.js" defer></script>
+    <title>Day 30</title>
+</head>
+<body>
+    <i class="bi bi-moon-stars-fill" id="toggle" style="font-size: 40px; position: absolute; margin: 25px;"></i>
+    <header id="header">
+        <h1>World Countries Data</h1>
+        <a href="#graphs"><img src="img/arrowdown.png" alt="arrow down button" class="arrowDown"></a>
+        <p class="countriesCounts"> <!--Currently we have no. of countries --></p>
+        <p class="criteria"><!--satisfied the search criteria--> </p>
+
+        <input type="text" class="search" placeholder="Search a country...">
+
+        <div class="buttonContainers">
+            Sort By:
+            <button id="name">Name</button>
+            <button id="capital">Capital</button>
+            <button id="population">Population</button>
+        </div>
+    </header>
+
+    <div class="countriesContainer">
+        <!-- <div class="cards">
+            Countries are here
+        </div> -->
+    </div>
+
+    <div class="noDataFoundDiv">
+            <h2 class="noDataFound">No Data Found</h2>
+    </div>
+
+    <div class="wrapper">
+        <div class="buttonContainer">
+            <button class="btn" id="btnPopulation">POPULATION</button>
+            <button class="btn" id="btnLanguages">LANGUAGES</button>
+        </div>
+        <div class="toggleContainer">
+            <p class="toggleText">10 Most populated countries in the World</p> 
+        </div>
+        <div class="graphs" id="graphs">
+            <a href="#header"><img src="img/arrowup.png" alt="arrow down button" class="arrowUp"></a>
+            <div class="wrapGraphs">
+                <ul>
+                    <!-- li goes here -->
+                </ul>
+            </div>
+    
+        </div>
+    </div>
+
+</body>
+</html>
