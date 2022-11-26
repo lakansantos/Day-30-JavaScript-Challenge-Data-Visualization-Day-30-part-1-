@@ -173,19 +173,16 @@ const fetchCountries = async () =>{
             let toggleText = document.querySelector('.toggleText');
             let wrapper = document.querySelector('.wrapper');
             let ul = document.querySelector('ul');
-            let countriesWrapper = document.querySelectorAll('.countriesWrapper');
             let noDataFoundDiv = document.querySelector('.noDataFoundDiv');
-            let populationContainer = document.querySelectorAll('.populationContainer')
-            let languagesContainer = document.querySelectorAll('.languagesContainer')
-            let countsText = document.querySelectorAll('.countsContainer')
+
             
-            for(const card of cards){
-                card.style.background = 'white';
-                card.style.color = 'black';
-                card.style.transition = '1.5s'
-            }
+
             const lightMode = () =>{
                 let cards = [...document.querySelectorAll('.cards')]
+                let countriesWrapper = [...document.querySelectorAll('.countriesWrapper')]
+                let populationContainer = [...document.querySelectorAll('.populationContainer')]
+                let languagesContainer = [...document.querySelectorAll('.languagesContainer')]
+                let countsText =[...document.querySelectorAll('.countsContainer')]
                 header.style.background = "white"
                 header.style.transition = '1.5s'
                 header.style.color = 'black';
@@ -219,6 +216,10 @@ const fetchCountries = async () =>{
             
             const darkMode = () =>{
                 let cards = [...document.querySelectorAll('.cards')];
+                let countriesWrapper = [...document.querySelectorAll('.countriesWrapper')]
+                let populationContainer = [...document.querySelectorAll('.populationContainer')]
+                let languagesContainer = [...document.querySelectorAll('.languagesContainer')]
+                let countsText =[...document.querySelectorAll('.countsContainer')]
                 header.style.background = "#444343"
                 header.style.transition = '1.5s'
                 header.style.color = 'white';  
@@ -241,8 +242,6 @@ const fetchCountries = async () =>{
                     card.style.color = 'white';
                     card.style.transition = '1.5s'
                 }
-
-                console.log(cards)
               
         
                 for(const country of countriesWrapper){
