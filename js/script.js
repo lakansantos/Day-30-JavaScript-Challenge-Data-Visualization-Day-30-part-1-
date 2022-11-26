@@ -71,136 +71,7 @@ const fetchCountries = async () =>{
         countriesCounts.innerText = `Currently, we have ${countries.length} countries`
         let defaultFlag = 0;
         // let GetTheme = JSON.parse(localStorage.getItem('PageTheme'));
-        function changeColor(){
-            const toggle = document.querySelector('#toggle');
-            let header = document.querySelector('header');
-            let cards = document.querySelectorAll('.cards')
-            let toggleText = document.querySelector('.toggleText');
-            let wrapper = document.querySelector('.wrapper');
-            let ul = document.querySelector('ul');
-            let countriesWrapper = document.querySelectorAll('.countriesWrapper');
-            let noDataFoundDiv = document.querySelector('.noDataFoundDiv');
-            let populationContainer = document.querySelectorAll('.populationContainer')
-            let languagesContainer = document.querySelectorAll('.languagesContainer')
-            let countsText = document.querySelectorAll('.countsContainer')
-            
-            for(const card of cards){
-                card.style.background = 'white';
-                card.style.color = 'black';
-                card.style.transition = '1.5s'
-            }
-            const lightMode = () =>{
-                header.style.background = "white"
-                header.style.transition = '1.5s'
-                header.style.color = 'black';
-                countriesContainer.style.background = '#e7e7e7';
-                countriesContainer.style.transition = '1.5s'
-                toggle.style.color = 'black'
-                wrapper.style.background = 'white';
-                toggleText.style.color = 'black';
-                noDataFoundDiv.style.color = '#e7e7e7'; 
-                for(const card of cards){
-                    card.style.background = 'white';
-                    card.style.color = 'black';
-                    card.style.transition = '1.5s'
-                }
-                for(const languagesText of languagesContainer){
-                    languagesText.style.color = 'black';
-                }
-                for(const counts of countsText){
-                    counts.style.color = 'black'
-                }
-        
-                for(const country of countriesWrapper){
-                    country.style.color = 'black';
-                }
-        
-                for(population of populationContainer){
-                    population.style.color = 'black';
-                }
-            }
-            
-            
-            const darkMode = () =>{
-                header.style.background = "#444343"
-                header.style.transition = '1.5s'
-                header.style.color = 'white';  
-                countriesContainer.style.transition = '1.5s'
-                countriesContainer.style.background = '#333';
-                toggleText.style.color = 'white';
-                toggle.style.color = 'white';
-                wrapper.style.background = '#444343';
-                noDataFoundDiv.style.color = '#333';
-                for(const languagesText of languagesContainer){
-                    languagesText.style.color = 'white';
-                }
-                for(const counts of countsText){
-                    counts.style.color = 'white'
-                }
-        
-            
-                for(const card of cards){
-                    card.style.background = '#444343';
-                    card.style.color = 'white';
-                    card.style.transition = '1.5s'
-                }
-        
-                for(const country of countriesWrapper){
-                    country.style.color = 'white';
-                }
-        
-                for(population of populationContainer){
-                    population.style.color = 'white';
-                }
-        
-          
-            }
-           
-        
-            let theme;
-  
-            toggle.addEventListener('click', function(){
-                
-                this.classList.toggle("bi-sun-fill");
-        
-                
-                if(this.classList.toggle("bi-moon-stars-fill")){
-                    theme = 'light';
-                    defaultFlag = 0;
-                    lightMode();
-                }
-                else{
-                    theme = 'dark'
-                    defaultFlag = 1;
-                    darkMode();
-                }
-                localStorage.setItem('PageTheme', JSON.stringify(theme));
-                console.log(localStorage)
-
-
-            })
-   
-            
-           let GetTheme = JSON.parse(localStorage.getItem('PageTheme'));
-                if(GetTheme === 'dark'){
-                    darkMode();
-                    defaultFlag = 1;
-                    toggle.className = 'bi-sun-fill'
-                }
-                else{
-                    lightMode();
-                    defaultFlag = 0;
-                    toggle.className = 'bi-moon-stars-fill'
-                }
-
-                
-
-        }
-        
-        changeColor()
-
-        console.log(defaultFlag)
-    
+      
         
        
         //after the url has been fetched. It's time to display the countries into div. 
@@ -294,6 +165,142 @@ const fetchCountries = async () =>{
             }
 
         }
+
+        function changeColor(){
+            const toggle = document.querySelector('#toggle');
+            let header = document.querySelector('header');
+            let cards = [...document.querySelectorAll('.cards')]
+            let toggleText = document.querySelector('.toggleText');
+            let wrapper = document.querySelector('.wrapper');
+            let ul = document.querySelector('ul');
+            let countriesWrapper = document.querySelectorAll('.countriesWrapper');
+            let noDataFoundDiv = document.querySelector('.noDataFoundDiv');
+            let populationContainer = document.querySelectorAll('.populationContainer')
+            let languagesContainer = document.querySelectorAll('.languagesContainer')
+            let countsText = document.querySelectorAll('.countsContainer')
+            
+            for(const card of cards){
+                card.style.background = 'white';
+                card.style.color = 'black';
+                card.style.transition = '1.5s'
+            }
+            const lightMode = () =>{
+                let cards = [...document.querySelectorAll('.cards')]
+                header.style.background = "white"
+                header.style.transition = '1.5s'
+                header.style.color = 'black';
+                countriesContainer.style.background = '#e7e7e7';
+                countriesContainer.style.transition = '1.5s'
+                toggle.style.color = 'black'
+                wrapper.style.background = 'white';
+                toggleText.style.color = 'black';
+                noDataFoundDiv.style.color = '#e7e7e7'; 
+                for(const card of cards){
+                    card.style.background = 'white';
+                    card.style.color = 'black';
+                    card.style.transition = '1.5s'
+                }
+                for(const languagesText of languagesContainer){
+                    languagesText.style.color = 'black';
+                }
+                for(const counts of countsText){
+                    counts.style.color = 'black'
+                }
+        
+                for(const country of countriesWrapper){
+                    country.style.color = 'black';
+                }
+        
+                for(population of populationContainer){
+                    population.style.color = 'black';
+                }
+            }
+            
+            
+            const darkMode = () =>{
+                let cards = [...document.querySelectorAll('.cards')];
+                header.style.background = "#444343"
+                header.style.transition = '1.5s'
+                header.style.color = 'white';  
+                countriesContainer.style.transition = '1.5s'
+                countriesContainer.style.background = '#333';
+                toggleText.style.color = 'white';
+                toggle.style.color = 'white';
+                wrapper.style.background = '#444343';
+                noDataFoundDiv.style.color = '#333';
+                for(const languagesText of languagesContainer){
+                    languagesText.style.color = 'white';
+                }
+                for(const counts of countsText){
+                    counts.style.color = 'white'
+                }
+        
+            
+                for(const card of cards){
+                    card.style.background = '#444343';
+                    card.style.color = 'white';
+                    card.style.transition = '1.5s'
+                }
+
+                console.log(cards)
+              
+        
+                for(const country of countriesWrapper){
+                    country.style.color = 'white';
+                }
+        
+                for(population of populationContainer){
+                    population.style.color = 'white';
+                }
+        
+          
+            }
+           
+        
+            let theme;
+  
+            toggle.addEventListener('click', function(){
+                
+                this.classList.toggle("bi-sun-fill");
+        
+                
+                if(this.classList.toggle("bi-moon-stars-fill")){
+                    theme = 'light';
+                    defaultFlag = 0;
+                    lightMode();
+                }
+                else{
+                    theme = 'dark'
+                    defaultFlag = 1;
+                    darkMode();
+                }
+                localStorage.setItem('PageTheme', JSON.stringify(theme));
+                console.log(localStorage)
+
+
+            })
+   
+            
+           let GetTheme = JSON.parse(localStorage.getItem('PageTheme'));
+                if(GetTheme === 'dark'){
+                    darkMode();
+                    defaultFlag = 1;
+                    toggle.className = 'bi-sun-fill'
+                }
+                else{
+                    lightMode();
+                    defaultFlag = 0;
+                    toggle.className = 'bi-moon-stars-fill'
+                }
+
+                
+
+        }
+        
+        changeColor()
+
+        console.log(defaultFlag)
+    
 
         const buttons = document.querySelectorAll('.buttonContainers > button');
         
